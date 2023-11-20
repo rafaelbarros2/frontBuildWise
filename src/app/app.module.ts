@@ -7,6 +7,11 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { BodyComponent } from './body/body.component';
+import { MenubarComponent } from './menubar/menubar.component';
+import { CompositionListComponent } from './composition-list/composition-list.component';
+import { TableModule } from 'primeng/table';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +19,16 @@ import { BodyComponent } from './body/body.component';
     SidenavComponent,
     SettingsComponent,
     StatisticsComponent,
-    BodyComponent
+    BodyComponent,
+    MenubarComponent,
+    CompositionListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TableModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

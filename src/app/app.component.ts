@@ -5,7 +5,6 @@ interface SidenavToggle{
   collapsed: boolean;
 }
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,12 +13,12 @@ interface SidenavToggle{
 export class AppComponent {
   title = 'buildwise';
 
-  isSidenavCollapsed = false;
+  isSideNavCollapsed = false;
   screenWidth = 0 ;
 
   onToggleSidenav(data: SidenavToggle): void{
     this.screenWidth = data.screenWidth;
-    this.isSidenavCollapsed = data.collapsed;
+    this.isSideNavCollapsed = data.collapsed;
   }
 
 
