@@ -10,6 +10,7 @@ import { BodyComponent } from './body/body.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { CompositionListComponent } from './composition-list/composition-list.component';
 import { TableModule } from 'primeng/table';
+import { RotateDirective } from './app-rotate.directive';
 
 
 
@@ -22,6 +23,7 @@ import { TableModule } from 'primeng/table';
     BodyComponent,
     MenubarComponent,
     CompositionListComponent,
+    RotateDirective,
   ],
   imports: [
     BrowserModule,
