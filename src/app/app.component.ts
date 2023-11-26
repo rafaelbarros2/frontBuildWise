@@ -13,12 +13,13 @@ interface SidenavToggle{
 export class AppComponent {
   title = 'buildwise';
 
-  isSideNavCollapsed = false;
+  isSideNavCollapsed = true;
   screenWidth = 0 ;
 
   onToggleSidenav(data: SidenavToggle): void{
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
+    console.log( data.collapsed)
   }
 
 

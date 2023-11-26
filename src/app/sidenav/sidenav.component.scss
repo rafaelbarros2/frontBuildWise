@@ -7,6 +7,7 @@
   width: 5rem;
   height: 100vh;
   box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+  border-color: red;
 
   .logo-container {
       display: flex;
@@ -43,7 +44,7 @@
           background-color: transparent;
           border: none;
 
-          .fa-times {
+          .pi-times {
               color: #fff;
               font-size: 24px;
           }

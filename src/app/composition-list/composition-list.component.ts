@@ -8,11 +8,8 @@ import { Composicao } from '../model/composicao';
   styleUrls: ['./composition-list.component.scss']
 })
 export class CompositionListComponent implements OnInit{
-  isHovering = false;
   compositions!: Composicao[] ;
-  items = ['Item 1', 'Item 2', 'Item 3'];
-  showButtons: boolean[] = [];
-  isMouseOverRow: boolean = false;
+
   mouseOverRowIndex: number | null = null;
 
   constructor(private compostionService: CompositionListService) {
@@ -30,11 +27,6 @@ export class CompositionListComponent implements OnInit{
   }
 
 
-  hideButtonsWithDelay(index: number) {
-    setTimeout(() => {
-      this.showButtons[index] = false;
-    }, 5000); // Ajuste o tempo conforme necessário
-  }
   editItem(item: string) {
     console.log(`Editando ${item}`);
   }
@@ -43,11 +35,11 @@ export class CompositionListComponent implements OnInit{
     console.log(`Adicionando ${item}`);
     // Crie um novo objeto Composicao com valores vazios ou padrão
     let newItem: Composicao = {
-      item: index,
-      cod: '',
-      banco: '',
-      descricao: '',
-      und: '',
+      item: index + 2,
+      cod: '----',
+      banco: '---',
+      descricao: '---',
+      und: '---',
       quant: 0,
       valor_unit: 0,
       valor_bdi: 0,
@@ -55,6 +47,11 @@ export class CompositionListComponent implements OnInit{
     };
     // Adicione o novo item logo após o item atual na matriz
     this.compositions.splice(index + 1, 0, newItem);
+
+    // Atualize os valores item para refletir as mudanças na matriz
+    for (let i = index + 2; i < this.compositions.length; i++) {
+      this.compositions[i].item = i + 1;
+    }
   }
 
 }

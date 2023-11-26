@@ -1,27 +1,35 @@
-<div class=" card-body">
-  <div class="card">
-    <p-table [value]="compositions">
+
+  <p-card>
+    <p-table [value]="compositions" [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template pTemplate="header">
-          <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Quantity</th>
-          </tr>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+        </tr>
       </ng-template>
       <ng-template pTemplate="body" let-composicao let-i="rowIndex">
-        <tr (mouseenter)="mouseOverRowIndex = i" (mouseleave)="mouseOverRowIndex = null">
+        <tr
+          (mouseenter)="mouseOverRowIndex = i"
+          (mouseleave)="mouseOverRowIndex = null"
+          style="border-width: 0.5px"
+        >
           <td>{{ composicao.item }}</td>
-          <td>{{ composicao.cod }}<br>
-            <div *ngIf="mouseOverRowIndex === i || isButtonVisible(i)" style="display: inline-block;">
-              <button class="btn btn-primary " (click)="editItem(composicao)" style="margin-right: 10px;">Editar</button>
-              <button class="btn btn-primary " (click)="addItem(composicao, i)" >Adicionar</button>
+          <td>
+            {{ composicao.cod }}<br />
+            <div
+              *ngIf="mouseOverRowIndex === i || isButtonVisible(i)"
+              style="display: inline-block"
+            >
+              <button class="btn btn-primary" (click)="addItem(composicao, i)">
+                Adicionar
+              </button>
             </div>
           </td>
           <td>{{ composicao.banco }}</td>
           <td>{{ composicao.descricao }}</td>
         </tr>
       </ng-template>
-  </p-table>
-  </div>
-</div>
+    </p-table>
+  </p-card>

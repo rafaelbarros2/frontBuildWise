@@ -11,6 +11,7 @@ import { MenubarComponent } from './menubar/menubar.component';
 import { CompositionListComponent } from './composition-list/composition-list.component';
 import { TableModule } from 'primeng/table';
 import { RotateDirective } from './app-rotate.directive';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -28,7 +29,8 @@ import { RotateDirective } from './app-rotate.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TableModule
+    TableModule,
+    CardModule
 
 
   ],
